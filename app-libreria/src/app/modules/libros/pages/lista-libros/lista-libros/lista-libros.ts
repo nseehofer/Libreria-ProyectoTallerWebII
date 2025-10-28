@@ -1,17 +1,18 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { LibroService, Libro } from '../../../../../service/libros/libro.service'; 
 import { inject } from '@angular/core';
+import { TarjetaLibro } from '../../../components/tarjeta-libro/tarjeta-libro';
 
 @Component({
   selector: 'app-lista-libros',
-  imports: [],
+  standalone: true,
+  imports: [TarjetaLibro],
   templateUrl: './lista-libros.html',
   styleUrl: './lista-libros.css',
 })
 export class ListaLibros implements OnInit {
 
   public libros = signal<Libro[]>([]);
-
   private libroService = inject(LibroService);
 
   ngOnInit(): void {

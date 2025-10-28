@@ -4,9 +4,7 @@
 
 <ul>
   @for (libro of libros(); track libro.id) {
-    <li>
-      <strong>{{ libro.nombre }}</strong> - <em>(Autor: {{ libro.autor }})</em>
-    </li>
+    <app-tarjeta-libro [libro]="libro"></app-tarjeta-libro>
   } @empty {
     <li>Cargando libros o no hay libros disponibles...</li>
   }
