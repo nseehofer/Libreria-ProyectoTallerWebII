@@ -7,7 +7,7 @@ export class AppRoutes {
 
         const  router = Router();
 
-        router.use('/api/libro',libroRouter)
+        router.use('/libros',libroRouter) // Problema por el cual no me reconocia la URL /api/libros :/
         router.use('/api/usuario',usuarioRouter)
 
         return router;
