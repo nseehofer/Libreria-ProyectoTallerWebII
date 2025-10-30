@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --bs-body-bg: #F5EFE6;
+    --bs-body-color: #4A3F35;
+    --bs-primary: #800020;         
+    --bs-primary-rgb: 128, 0, 32;  
+    --bs-link-color: #800020;
+    --bs-warning: #B8860B;
+    --bs-warning-rgb: 184, 134, 11;
+
+    body {
+        background-color: var(--bs-body-bg) !important;
+    }
+
+    body, .btn {
+        font-family: 'Merriweather', serif; 
+    }
+}
