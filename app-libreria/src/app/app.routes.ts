@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { ListaLibros } from './modules/libros/pages/lista-libros/lista-libros';
+import { Carrito } from './modules/libros/pages/carrito/carrito';
 
 export const routes: Routes = [
     {
@@ -8,10 +9,9 @@ export const routes: Routes = [
     },
     {
         path: 'carrito',
-        loadComponent: () => import('./modules/libros/pages/carrito/carrito').then(m => m.Carrito)
+        component: Carrito
     },
     {
         path: '', redirectTo: 'libros', pathMatch: 'full'
     }
-
 ];
