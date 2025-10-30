@@ -1,7 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { LibroService, Libro } from '../../../../../service/libros/libro.service'; 
+import { LibroService, Libro } from './../../../../service/libros/libro.service'; 
 import { inject } from '@angular/core';
-import { TarjetaLibro } from '../../../components/tarjeta-libro/tarjeta-libro';
+import { TarjetaLibro } from './../../components/tarjeta-libro/tarjeta-libro';
 
 @Component({
   selector: 'app-lista-libros',
