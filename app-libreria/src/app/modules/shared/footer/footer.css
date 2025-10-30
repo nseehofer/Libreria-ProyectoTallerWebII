@@ -4,7 +4,7 @@
     padding: 1.5rem 0;
     background: #4A3F35; 
     color: #F5EFE6;
-    position: fixed;
+    position: sticky;
     bottom: 0;
 }
 

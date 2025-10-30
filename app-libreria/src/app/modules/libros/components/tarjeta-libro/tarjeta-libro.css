@@ -1,0 +1,32 @@
+.card-libro{
+    background-color: var(--bs-body-bg, #F5EFE6);
+    border: 1px solid rgba(74, 63, 53, 0.4); 
+    box-shadow: 0 4px 8px rgba(74, 63, 53, 0.05);
+    color: var(--bs-body-color, #4A3F35);
+    padding: 10px;
+}
+
+.card-libro .card-title {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+}
+
+.card-libro .card-subtitle {
+  color: var(--bs-body-color);
+  opacity: 0.8;
+} 
+
+.descripcion-corta {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 60px;
+}
+
+.btn-primary {
+  color: #F5EFE6;
+  font-weight: bold;
+}

@@ -1,6 +1,10 @@
-<article>
-    <h2>{{ libro.nombre }}</h2>
-    <p><strong>Autor:</strong> {{ libro.autor }}</p>
-    <p><strong>Precio</strong> {{ libro.precio }}</p>
-    <p><strong>Descripcion:</strong> {{ libro.descripcion }}</p>
+<article class="card-libro h-100 card-antigua mb-2" style="max-width: 300px;">
+  <!-- <img src="" class="card-img-top" alt="Portada de {{ libro.nombre }}"> -->
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title">{{ libro.nombre }}</h5>
+    <h6 class="card-subtitle mb-2">{{ libro.autor }}</h6>
+    <p class="card-text descripcion-corta">{{ libro.descripcion }}</p>
+    <h4 class="card-text text-end my-3" style="color: var(--bs-primary); font-weight: bold;">${{ libro.precio }}</h4>
+    <button class="btn btn-primary mt-auto">Ver detalles</button>
+  </div>
 </article>
