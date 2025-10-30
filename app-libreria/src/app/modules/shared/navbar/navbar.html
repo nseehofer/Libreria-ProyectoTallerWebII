@@ -1,27 +1,26 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" routerLink="/">Librería TW2</a>
+<nav class="navbar navbar-expand-lg" style="background-color: #F5EFE6;" data-bs-theme="dark">
+  <div class="container-fluid">
 
-        <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/perfil">
-                <i class="bi bi-person-fill"></i> </a>
-            </li>
-        </ul>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/perfil">
+          <i class="bi bi-person-fill fs-4"></i> </a>
+      </li>
+    </ul>
 
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/carrito">
-                    <i class="bi bi-cart-fill"></i>(0)
-                </a>
-            </li>
-        </ul>
-    </div>
+    <a class="navbar-brand mx-auto" routerLink="/" style="color: #4A3F35; font-weight: bold; font-family: 'Merriweather', serif;">
+      Librería TW2
+    </a>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/carrito">
+          <i class="bi bi-cart-fill fs-4"></i>
+          <span>0</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
 </nav>    
 <router-outlet></router-outlet>
-    <!--
-    <ul>
-        <li><a routerLinkActive="activo" routerLink="/libros">Libros</a></li>
-        <li><a routerLinkActive="activo" routerLink="/carrito">Carrito</a></li>
-    </ul>
-    -->
