@@ -43,5 +43,13 @@ export class UsuarioRepository{
         return await prisma.usuario.delete({
             where : {id}
         })
-    }    
+    } 
+    
+    async buscarUsuarioPorEmail(email:string) {
+        return await prisma.usuario.findUnique(
+            {
+                where:{email:email}
+            }
+        )
+    }
 }
