@@ -12,11 +12,11 @@
 }
 
 .modal-contenido {
-  background-color: var(--bs-body-bg, #F5EFE6); /* Usa tu variable de pergamino */
-  color: var(--bs-body-color, #4A3F35);      /* Usa tu variable de tinta */
+  background-color: var(--bs-body-bg, #F5EFE6); 
+  color: var(--bs-body-color, #4A3F35);      
   padding: 20px;
   border-radius: 8px;
-  max-width: 800px; /* Lo hacemos más grande (era 500px) */
+  max-width: 800px; 
   width: 90%;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }

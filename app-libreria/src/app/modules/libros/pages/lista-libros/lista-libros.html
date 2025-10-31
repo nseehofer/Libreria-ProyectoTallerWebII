@@ -5,7 +5,7 @@
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     @for (libro of libros(); track libro.id) {
       <div class="col">
-        <app-tarjeta-libro [libro]="libro" (verDetalle)="abrirModal($event)"></app-tarjeta-libro>
+        <app-tarjeta-libro [libro]="libro"></app-tarjeta-libro>
       </div>
 
     } @empty {
@@ -15,12 +15,3 @@
     }
   </div>
 </section>
-
-@if (LibroSeleccionado(); as libro) {
-  <app-detalle-libro 
-    [libro]="libro" 
-    (cerrar)="cerrarModal()">
-  </app-detalle-libro>
-}
-
-

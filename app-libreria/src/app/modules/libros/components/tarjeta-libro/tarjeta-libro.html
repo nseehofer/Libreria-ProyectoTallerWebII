@@ -8,7 +8,7 @@
         </div>
     </div>
     <h4 class="card-text" style="color: var(--bs-primary); font-weight: bold;">${{ libro.precio }}</h4>
-    <button (click)="onVerDetalleClick()" class="btn mt-auto">Ver detalles</button>
+    <button [routerLink]="['/libros', libro.id]" class="btn mt-auto">Ver detalles</button>
   </div>
 </article>
 

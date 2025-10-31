@@ -18,10 +18,16 @@ export interface Libro {
 
 
 export class LibroService {
-  private apiUrl = 'http://localhost:3000/api/libros';
+  private apiUrl = 'http://localhost:3000/api';
   private http = inject(HttpClient);
 
   public getLibros(): Observable<Libro[]> {
-    return this.http.get<Libro[]>(this.apiUrl);
+    const url = `${this.apiUrl}/libros`;
+    return this.http.get<Libro[]>(url);
+  }
+
+  public getLibroPorId(id: number): Observable<Libro> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Libro>(url);
   }
 }
