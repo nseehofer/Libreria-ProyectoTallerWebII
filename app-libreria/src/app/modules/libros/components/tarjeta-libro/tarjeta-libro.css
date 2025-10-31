@@ -5,6 +5,11 @@
     padding: 10px;
 }
 
+.card-antigua img{
+  height: 300px;
+  object-fit: contain;
+}
+
 .card-libro .card-title {
   font-family: 'Merriweather', serif;
   font-weight: bold;
