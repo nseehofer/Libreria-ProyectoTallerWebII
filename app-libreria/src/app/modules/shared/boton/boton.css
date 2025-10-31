@@ -4,6 +4,8 @@ button {
   color: var(--color-marfil);
   font-family: 'Merriweather', serif;
   margin-top: auto;
+  width: 100%;
+  border: none;
 }
 
 button:hover {

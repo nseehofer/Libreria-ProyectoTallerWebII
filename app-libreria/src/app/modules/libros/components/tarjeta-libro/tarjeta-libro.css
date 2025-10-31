@@ -29,12 +29,14 @@
 .card-antigua .card-title {
   white-space: nowrap;     
   overflow: hidden;
+  font-size: .9rem;
   text-overflow: ellipsis;
   color: var(--color-pino);
   font-weight: bold;
 }
 
 .card-antigua .card-subtitle {
+  font-size: .8rem;
   color: var(--color-corteza);
   opacity: 0.9;
 }
@@ -42,6 +44,7 @@
 .card-antigua .card-precio {
   color: var(--color-bordo);
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .descripcion-corta {
@@ -51,7 +54,7 @@
   line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: 60px;
   color: var(--color-corteza);
   opacity: 0.8;
+  font-size: .8rem;
 }
