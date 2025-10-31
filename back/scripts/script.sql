@@ -1,3 +1,5 @@
+CREATE DATABASE [db-libreria]
+USE [db-libreria]
 -- Nombre de db "db-libreria"
 -- -----------------------------------------------------
 -- Tabla: Categoria
@@ -32,6 +34,7 @@ CREATE TABLE [Libro] (
     [descripcion] NVARCHAR(MAX) NULL, -- 'TEXT' de MySQL es 'NVARCHAR(MAX)' en SQL Server
     [precio] DECIMAL(10, 2) NOT NULL,
     [autor] NVARCHAR(255) NOT NULL,
+    [img-src] NVARCHAR(255) NOT NULL,
     
     -- Llave Foránea
     [id_categoria] INT NOT NULL,

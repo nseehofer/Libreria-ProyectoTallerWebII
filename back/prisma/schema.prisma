@@ -8,24 +8,25 @@ datasource db {
 }
 
 model Categoria {
-  id     Int     @id(map: "PK__Categori__3213E83F1EB47693") @default(autoincrement())
+  id     Int     @id(map: "PK__Categori__3213E83F235115A6") @default(autoincrement())
   nombre String  @db.NVarChar(100)
   Libro  Libro[]
 }
 
 model Libro {
-  id           Int       @id(map: "PK__Libro__3213E83F3E30E107") @default(autoincrement())
+  id           Int       @id(map: "PK__Libro__3213E83F66CA487D") @default(autoincrement())
   nombre       String    @db.NVarChar(255)
   descripcion  String?   @db.NVarChar(Max)
   precio       Decimal   @db.Decimal(10, 2)
   autor        String    @db.NVarChar(255)
+  img_src      String    @map("img-src") @db.NVarChar(255)
   id_categoria Int
   Categoria    Categoria @relation(fields: [id_categoria], references: [id], map: "fk_libro_categoria")
 }
 
 model Usuario {
-  id         Int     @id(map: "PK__Usuario__3213E83F38F6BDF2") @default(autoincrement())
-  email      String  @unique(map: "UQ__Usuario__AB6E616430D61A5D") @db.NVarChar(255)
+  id         Int     @id(map: "PK__Usuario__3213E83F4F6FA818") @default(autoincrement())
+  email      String  @unique(map: "UQ__Usuario__AB6E61643282AF7D") @db.NVarChar(255)
   contrase_a String  @map("contraseña") @db.NVarChar(255)
   nombre     String  @db.NVarChar(100)
   apellido   String  @db.NVarChar(100)

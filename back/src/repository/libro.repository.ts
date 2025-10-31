@@ -22,13 +22,13 @@ export class LibroRepository{
     }
 
 
-    async createLibro(data : {nombre : string,precio:number,descripcion: string,autor: string, id_categoria?:number}){
+    async createLibro(data : {nombre : string,precio:number,descripcion: string,autor: string, img_src: string,id_categoria?:number}){
         return await prisma.libro.create({
             data
         })
     }
 
-    async updateLibro(id:number,  data : {nombre?:string,precio?:number,descripcion?: string,autor?: string, id_categoria?:number}){
+    async updateLibro(id:number,  data : {nombre?:string,precio?:number,descripcion?: string,autor?: string,img_src?: string, id_categoria?:number}){
         return await prisma.libro.update({
             where : {id},
             data
