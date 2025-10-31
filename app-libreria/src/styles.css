@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --negro: #2C2521; 
+  --gris-oscuro: #4A3F35;
+  --gris: #A19B94;
+  --beige: #F5EFE6;
+  --marfil: #FAF9F6;
+  --bordo: #800020;
+  --marron: #B8860B;
+
+  --color-fondo-sendero: #EDEAE3;
+  --color-marfil: #FAF9F6;
+  --color-corteza: #3E2F2F;
+  --color-pino: #2A4032;
+  --color-bordo: #800020;
+  --color-musgo: #4A5D4E;
+}
+
+body {
+  background-color: var(--color-corteza);
+  color: var(--color-marfil);
+  font-family: 'Merriweather', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-marfil);
+  font-family: 'Merriweather', serif;
+}
+
+.boton-warning {
+  background-color: var(--color-bordo);
+  border-color: var(--color-bordo);
+  color: #fff;
+  font-family: 'Merriweather', serif;
+}
+
+.boton-warning:hover {
+  opacity: 0.9;
+  color: #fff;
+}

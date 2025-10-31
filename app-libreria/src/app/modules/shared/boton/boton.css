@@ -1,0 +1,14 @@
+button {
+  background-color: var(--color-musgo);
+  border-color: var(--color-musgo);
+  color: var(--color-marfil);
+  font-family: 'Merriweather', serif;
+  margin-top: auto;
+  width: 100%;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.9;
+  color: var(--color-marfil);
+}

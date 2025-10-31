@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #F5EFE6;" data-bs-theme="dark">
+  <div class="container-fluid">
+
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">
+          <i class="bi bi-person-fill fs-4"></i> </a>
+      </li>
+    </ul>
+
+    <a class="navbar-brand mx-auto" routerLink="/libros" style="color: #4A3F35; font-weight: bold; font-family: 'Merriweather', serif;">
+      Librería TW2
+    </a>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/carrito">
+          <i class="bi bi-cart-fill fs-4"></i>
+          <span style="color: black;">{{ contadorCarrito() }}</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

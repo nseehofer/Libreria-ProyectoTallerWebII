@@ -1,0 +1,13 @@
+:host{
+    flex-shrink: 0; 
+    width: 100%;
+    padding: 1.5rem 0;
+    background: #4A3F35; 
+    color: #F5EFE6;
+    bottom: 0;
+}
+
+:host p {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+}

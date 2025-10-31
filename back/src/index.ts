@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(cors())
 
-app.use(AppRoutes.routes);
+app.use('/api', AppRoutes.routes);
 
 app.listen(PORT, () => {
   console.log(`El servidor esta corriendo en el puerto ${PORT}`);
