@@ -1,7 +1,8 @@
 import { Component, inject, Input } from '@angular/core';
-import { Libro } from '../../../../service/libros/libro.service';
+import {  } from '../../../../service/libros/libro.service';
 import { CarritoService } from '../../../../service/carrito/carrito.service';
 import { CurrencyPipe } from '@angular/common';
+import { ItemCarrito } from '../../../../service/carrito/carrito.service';
 
 @Component({
   selector: 'app-carrito-item',
@@ -10,11 +11,11 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './carrito-item.css',
 })
 export class CarritoItem {
-  @Input ({required:true}) libro!: Libro;
+  @Input ({required:true}) item!: ItemCarrito;
 
   private carritoService = inject(CarritoService);
 
-  eliminarDelCarrito(id: number): void {
-    this.carritoService.eliminarDelCarrito(id);
+  eliminarDelCarrito(codigo: string): void {
+    this.carritoService.eliminarDelCarrito(codigo);
   }
 }

@@ -1,5 +1,5 @@
-@for(libro of libros(); track libro.id){
-    <app-carrito-item [libro]="libro"></app-carrito-item>
+@for(item of libros(); track item.codigoProducto) {
+    <app-carrito-item [item]="item"></app-carrito-item>
 }@empty{
     <p>El carrito está vacío.</p>
 }

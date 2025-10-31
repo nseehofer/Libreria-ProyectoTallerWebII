@@ -1,6 +1,6 @@
 <div>
-    <h3>{{libro.nombre}}</h3>
-    <p>Autor: {{libro.autor}}</p>
-    <p>Precio: {{libro.precio | currency}}</p>
-    <button (click)="eliminarDelCarrito(libro.id)">Eliminar del carrito</button>
+    <h3>{{item.libro.nombre}}</h3>
+    <p>Autor: {{item.libro.autor}}</p>
+    <p>Precio: {{item.libro.precio | currency}}</p>
+    <button (click)="eliminarDelCarrito(item.codigoProducto)">Eliminar del carrito</button>
 </div>

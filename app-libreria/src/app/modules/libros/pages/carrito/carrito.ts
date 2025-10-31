@@ -15,8 +15,8 @@ export class Carrito {
 
   public libros = this.carritoService.libros;
 
-  eliminarDelCarrito(id: number): void {
-    this.carritoService.eliminarDelCarrito(id);
+  eliminarDelCarrito(codigo: string): void {
+    this.carritoService.eliminarDelCarrito(codigo);
   }
 
 
