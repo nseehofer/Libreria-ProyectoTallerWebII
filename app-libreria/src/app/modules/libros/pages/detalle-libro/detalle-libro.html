@@ -2,13 +2,13 @@
     <div class="col-md-5">
       <img src="https://www.rae.es/sites/default/files/portada_cien_anos_de_soledad_0.jpg" style="height: 700px;" alt="Portada de {{ libro.nombre }}">
     </div>
-    <div class="col-md-7 d-flex flex-column justify-content-between">
+    <div class="col-md-7 d-flex flex-column justify-content-between" style="width: 500px;">
         
-        <div class=" d-flex flex-column mb-3">
-            <h5 class="modal-title">{{ libro.nombre }}</h5>
+        <div class=" d-flex flex-column mb-3" >
+            <h3 class="modal-title">{{ libro.nombre }}</h3>
             <h4>{{ libro.autor }}</h4>
-            <h3 class="text-end" style="color: var(--bs-primary); font-weight: bold;">${{ libro.precio }}</h3>
-            <button type-label="Cerrar">Agregar al carrito</button>
+            <h5 style="color: var(--bs-primary); font-weight: bold;">${{ libro.precio }}</h5>
+            <button>Agregar al carrito</button>
         </div>
         
         <hr>

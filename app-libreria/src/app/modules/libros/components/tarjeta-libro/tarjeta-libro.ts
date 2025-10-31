@@ -12,9 +12,5 @@ import { RouterLink } from '@angular/router';
 export class TarjetaLibro {
   @Input({required:true}) libro!: Libro;
 
-  @Output() verDetalle = new EventEmitter<Libro>();
-
-  
-  
 
 }

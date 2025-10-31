@@ -27,7 +27,7 @@ export class LibroService {
   }
 
   public getLibroPorId(id: number): Observable<Libro> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl}/libros/${id}`;
     return this.http.get<Libro>(url);
   }
 }
