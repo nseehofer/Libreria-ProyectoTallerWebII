@@ -1,0 +1,54 @@
+.card-antigua {
+  background-color: var(--color-fondo-sendero);
+  color: var(--color-corteza);
+  border: 1px solid var(--color-fondo-sendero); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card-antigua:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-container {
+  height: 280px;
+  overflow: hidden;
+}
+
+.card-img-container .card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+  transition: transform 0.3s ease;
+}
+
+.card-antigua:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-antigua .card-title {
+  color: var(--color-pino);
+  font-weight: bold;
+}
+
+.card-antigua .card-subtitle {
+  color: var(--color-corteza);
+  opacity: 0.9;
+}
+
+.card-antigua .card-precio {
+  color: var(--color-bordo);
+  font-weight: bold;
+}
+
+.descripcion-corta {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 60px;
+  color: var(--color-corteza);
+  opacity: 0.8;
+}

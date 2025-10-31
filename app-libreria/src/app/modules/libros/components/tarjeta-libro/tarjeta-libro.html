@@ -1,12 +1,16 @@
-<article>
-  <img src="https://www.rae.es/sites/default/files/portada_cien_anos_de_soledad_0.jpg" alt="Portada de {{ libro.nombre }}" style="max-height: 280px;">
-  <div>
-    <div>
-        <h5>{{ libro.nombre }}</h5>
-        <h6>{{ libro.autor }}</h6>
-    </div>
-    <h4>{{ libro.precio | currency}}</h4>
-    <button [routerLink]="['/libros', libro.id]">Ver detalles</button>
+<article class="card h-100 card-antigua">
+  <div class="card-img-container">
+    <img src= "https://www.rae.es/sites/default/files/portada_cien_anos_de_soledad_0.jpg" 
+         alt="Portada de {{ libro.nombre }}" 
+         class="card-img-top"
+         style="height: 280px; object-fit: contain; background-color: var(--color-corteza);">
+  </div>
+
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title">{{ libro.nombre }}</h5>
+    <h6 class="card-subtitle mb-2">{{ libro.autor }}</h6>
+    <p class="card-text descripcion-corta">{{ libro.descripcion }}</p>
+    <h4 class="card-precio text-end my-3">{{ libro.precio | currency }}</h4>
+    <a [routerLink]="['/libros', libro.id]" class="boton mt-auto">Ver detalles</a>
   </div>
 </article>
-
