@@ -2,11 +2,12 @@ import { Component, EventEmitter, inject, Input, Output, signal } from '@angular
 import { Libro } from '../../../../service/libros/libro.service';
 import { RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
+import { Boton } from '../../../shared/boton/boton';
 
 @Component({
   selector: 'app-tarjeta-libro',
   standalone: true,
-  imports: [RouterLink, CurrencyPipe],
+  imports: [RouterLink, CurrencyPipe, Boton],
   templateUrl: './tarjeta-libro.html',
   styleUrl: './tarjeta-libro.css',
 })

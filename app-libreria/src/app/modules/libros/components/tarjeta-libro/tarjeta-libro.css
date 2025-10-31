@@ -27,6 +27,9 @@
 }
 
 .card-antigua .card-title {
+  white-space: nowrap;     
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: var(--color-pino);
   font-weight: bold;
 }

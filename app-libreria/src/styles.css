@@ -26,17 +26,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Merriweather', serif;
 }
 
-.boton {
-  background-color: var(--color-musgo);
-  border-color: var(--color-musgo);
-  color: var(--color-marfil);
-  font-family: 'Merriweather', serif;
-}
-.boton:hover {
-  opacity: 0.9;
-  color: var(--color-marfil);
-}
-
 .boton-warning {
   background-color: var(--color-bordo);
   border-color: var(--color-bordo);
