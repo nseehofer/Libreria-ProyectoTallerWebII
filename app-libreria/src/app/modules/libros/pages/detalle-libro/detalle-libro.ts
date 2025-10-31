@@ -1,6 +1,7 @@
 import { Component, Input, inject, OnInit } from '@angular/core';
 import { Libro, LibroService } from '../../../../service/libros/libro.service';
 import { ActivatedRoute } from '@angular/router';
+import { CarritoService } from '../../../../service/carrito/carrito.service';
 
 @Component({
   selector: 'app-detalle-libro',
@@ -13,6 +14,7 @@ export class DetalleLibro implements OnInit {
 
   private route = inject(ActivatedRoute);
   private libroService = inject(LibroService);
+  private carritoService = inject(CarritoService);
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -27,5 +29,9 @@ export class DetalleLibro implements OnInit {
       });
     }
   }
-  
+
+  agregarAlCarrito(libro: Libro): void {
+    this.carritoService.agregarAlCarrito(libro);
+    console.log(this.carritoService.cantidadLibros());
+  }
 }

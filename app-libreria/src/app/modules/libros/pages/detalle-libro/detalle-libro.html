@@ -8,7 +8,7 @@
             <h3 class="modal-title">{{ libro.nombre }}</h3>
             <h4>{{ libro.autor }}</h4>
             <h5 style="color: var(--bs-primary); font-weight: bold;">${{ libro.precio }}</h5>
-            <button>Agregar al carrito</button>
+            <button (click)="agregarAlCarrito(libro)">Agregar al carrito</button>
         </div>
         
         <hr>

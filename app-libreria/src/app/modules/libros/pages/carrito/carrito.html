@@ -1,1 +1,5 @@
-<p>carrito works!</p>
+@for(libro of libros(); track libro.id){
+    <app-carrito-item [libro]="libro"></app-carrito-item>
+}@empty{
+    <p>El carrito está vacío.</p>
+}
