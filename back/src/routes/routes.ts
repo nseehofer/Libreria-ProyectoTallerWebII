@@ -7,8 +7,8 @@ export class AppRoutes {
 
         const  router = Router();
 
-        router.use('/libros',libroRouter) // Problema por el cual no me reconocia la URL /api/libros :/
-        router.use('/api/usuario',usuarioRouter)
+        router.use('/libros',libroRouter) // Problema por el cual no me reconocia la URL /api ya esta en index.ts
+        router.use('/usuario',usuarioRouter)
 
         return router;
     }

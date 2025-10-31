@@ -13,7 +13,7 @@ export class LibroService {
     }
 
     async crearLibro(data: {[key:string]:any}){
-        const {nombre,descripcion,precio,autor, id_categoria} = data;
+        const {nombre,descripcion,precio,autor,img_src, id_categoria} = data;
 
         console.log(nombre,id_categoria);
         if(!nombre || typeof nombre !== 'string'){
@@ -35,13 +35,14 @@ export class LibroService {
             descripcion,
             precio,
             autor,
+            img_src,
             id_categoria
             
         })
 
     }
 
-    async actualizarLibro(id:number, data: {nombre?:string,precio?:number,descripcion?: string,autor?: string,id_categoria?:number}){
+    async actualizarLibro(id:number, data: {nombre?:string,precio?:number,descripcion?: string,autor?: string,img_src?: string,id_categoria?:number}){
         return await this.libroRepository.updateLibro(id,data);
     }
 
