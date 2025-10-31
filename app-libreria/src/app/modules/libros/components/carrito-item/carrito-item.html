@@ -1,6 +1,11 @@
-<div>
-    <h3>{{item.libro.nombre}}</h3>
-    <p>Autor: {{item.libro.autor}}</p>
-    <p>Precio: {{item.libro.precio | currency}}</p>
-    <button (click)="eliminarDelCarrito(item.codigoProducto)">Eliminar del carrito</button>
+<div class="item-carrito">
+    <img src= "https://www.rae.es/sites/default/files/portada_cien_anos_de_soledad_0.jpg" alt="{{ item.libro.nombre }}" >
+    
+    <div>
+        <h3>{{item.libro.nombre}}</h3>
+        <p>Autor: {{item.libro.autor}}</p>
+        <p>Precio: {{item.libro.precio | currency}}</p>
+    </div>
+    
+    <button (click)="eliminarDelCarrito(item.codigoProducto)">Eliminar</button>
 </div>

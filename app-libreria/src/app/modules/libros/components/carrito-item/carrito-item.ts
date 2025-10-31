@@ -3,6 +3,7 @@ import {  } from '../../../../service/libros/libro.service';
 import { CarritoService } from '../../../../service/carrito/carrito.service';
 import { CurrencyPipe } from '@angular/common';
 import { ItemCarrito } from '../../../../service/carrito/carrito.service';
+import { Boton } from '../../../shared/boton/boton';
 
 @Component({
   selector: 'app-carrito-item',

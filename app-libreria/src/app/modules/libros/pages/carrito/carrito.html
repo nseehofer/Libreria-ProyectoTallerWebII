@@ -1,5 +1,11 @@
-@for(item of libros(); track item.codigoProducto) {
-    <app-carrito-item [item]="item"></app-carrito-item>
-}@empty{
-    <p>El carrito está vacío.</p>
-}
+<div class="carrito">
+    <h2>Mi Carrito</h2>
+    <div>
+        @for(item of libros(); track item.codigoProducto) {
+            <app-carrito-item [item]="item"></app-carrito-item>
+        }@empty{
+            <p>El carrito está vacío.</p>
+        }
+    </div>
+    
+</div>
