@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
 import { Libro } from '../../../../service/libros/libro.service';
 
 @Component({
@@ -10,4 +10,12 @@ import { Libro } from '../../../../service/libros/libro.service';
 })
 export class TarjetaLibro {
   @Input({required:true}) libro!: Libro;
+
+  @Output() verDetalle = new EventEmitter<Libro>();
+
+  onVerDetalleClick(): void {
+    this.verDetalle.emit(this.libro);
+    console.log('Ver detalles del libro:', this.libro);
+  }
+
 }

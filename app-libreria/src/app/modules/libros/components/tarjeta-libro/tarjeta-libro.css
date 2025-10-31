@@ -1,7 +1,6 @@
 .card-libro{
     background-color: var(--bs-body-bg, #F5EFE6);
     border: 1px solid rgba(74, 63, 53, 0.4); 
-    box-shadow: 0 4px 8px rgba(74, 63, 53, 0.05);
     color: var(--bs-body-color, #4A3F35);
     padding: 10px;
 }
@@ -16,17 +15,8 @@
   opacity: 0.8;
 } 
 
-.descripcion-corta {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-height: 60px;
-}
-
-.btn-primary {
+.btn{
   color: #F5EFE6;
+  background: var(--bs-primary-red);
   font-weight: bold;
 }

@@ -2,11 +2,13 @@ import { Component, OnInit, signal } from '@angular/core';
 import { LibroService, Libro } from './../../../../service/libros/libro.service'; 
 import { inject } from '@angular/core';
 import { TarjetaLibro } from './../../components/tarjeta-libro/tarjeta-libro';
+import { DetalleLibro } from '../../components/detalle-libro/detalle-libro';
+
 
 @Component({
   selector: 'app-lista-libros',
   standalone: true,
-  imports: [TarjetaLibro],
+  imports: [TarjetaLibro, DetalleLibro],
   templateUrl: './lista-libros.html',
   styleUrl: './lista-libros.css',
 })
@@ -29,6 +31,19 @@ export class ListaLibros implements OnInit {
           
         }
       });
+  }
+
+  public mostrarModal = signal(false);
+  public LibroSeleccionado = signal<Libro | null>(null);
+
+  abrirModal(libro: Libro): void {
+    this.LibroSeleccionado.set(libro);
+    this.mostrarModal.set(true);
+  }
+
+  cerrarModal(): void {
+    this.mostrarModal.set(false);
+    this.LibroSeleccionado.set(null);
   }
 
 }

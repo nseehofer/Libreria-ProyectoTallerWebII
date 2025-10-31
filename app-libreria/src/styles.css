@@ -1,0 +1,20 @@
+:root {
+  --bs-body-bg: #F5EFE6;
+  --bs-body-color: #4A3F35;
+  --bs-primary-red: #800020;
+  --bs-primary-rgb: 128, 0, 32;
+  --bs-link-color: #800020;
+  --bs-warning: #B8860B;
+  --bs-warning-rgb: 184, 134, 11;
+  --bs-body-bg-rgb: 245, 239, 230;
+}
+
+body {
+  background-color: var(--bs-body-bg) !important;
+  color: var(--bs-body-color);
+  font-family: 'Merriweather', serif; 
+}
+
+.btn {
+  font-family: 'Merriweather', serif;
+}
