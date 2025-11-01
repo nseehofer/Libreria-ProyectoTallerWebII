@@ -1,5 +1,9 @@
-CREATE DATABASE [db-libreria]
-USE [db-libreria]
+CREATE DATABASE [db-libreria];
+GO
+
+USE [db-libreria];
+GO
+
 -- Nombre de db "db-libreria"
 -- -----------------------------------------------------
 -- Tabla: Categoria
