@@ -1,5 +1,5 @@
 import {UsuarioRepository} from "../repository/usuario.repository.js";
-import * as jwt from "jsonwebtoken";
+import jsonwebtoken from "jsonwebtoken";
 
 export class AutenticadorService {
 
@@ -16,7 +16,7 @@ export class AutenticadorService {
 
         const secreto = process.env.JWT_SECRET == undefined ? "secretoMalConfigurado" : process.env.JWT_SECRET;
 
-        const token = jwt.sign(datosUsuario, secreto, {expiresIn: "1h"});
+        const token = jsonwebtoken.sign(datosUsuario, secreto, {expiresIn: "1h"});
 
         return {token, usuario:datosUsuario};
     }
