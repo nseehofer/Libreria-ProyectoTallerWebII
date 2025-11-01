@@ -5,10 +5,11 @@ import { CurrencyPipe } from '@angular/common';
 import { ItemCarrito } from '../../../../service/carrito/carrito.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { OnInit } from '@angular/core';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-carrito-item',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, RouterLink],
   templateUrl: './carrito-item.html',
   styleUrl: './carrito-item.css',
 })

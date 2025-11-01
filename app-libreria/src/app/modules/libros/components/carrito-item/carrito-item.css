@@ -42,7 +42,15 @@
   min-width: 0;
 }
 
-.item-carrito > div > h3 {
+.item-carrito > div > a{
+  text-decoration: none;
+}
+
+.item-carrito > div > a:hover{
+  text-decoration: underline;
+}
+
+.item-carrito > div > a > h3 {
   margin: 0 0 4px 0;
   font-size: 16px;
   line-height: 1.3;
