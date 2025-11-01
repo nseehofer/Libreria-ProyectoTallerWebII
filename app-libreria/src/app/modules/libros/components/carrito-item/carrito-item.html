@@ -1,5 +1,5 @@
 <div class="item-carrito">
-    <img src= "https://www.rae.es/sites/default/files/portada_cien_anos_de_soledad_0.jpg" alt="{{ item.libro.nombre }}" >
+    <img [src] = "safeImgUrl" alt="{{ item.libro.nombre }}" >
     
     <div>
         <h3>{{item.libro.nombre}}</h3>
