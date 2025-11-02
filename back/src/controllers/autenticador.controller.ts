@@ -18,6 +18,12 @@ export class AutenticadorController {
 
             const { token, usuario } = await autenticadorService.signIn(email, contrase_a);
 
+            res.cookie('token', token, {
+                httpOnly: true,
+                secure: true,
+                sameSite: 'strict'
+            });
+
             res.status(200).json({ token, usuario });
 
         } catch (error: any) {
@@ -25,7 +31,7 @@ export class AutenticadorController {
             res.status(401).json({ message: error.message });
 
         }
-        
+
     }
 
 }
