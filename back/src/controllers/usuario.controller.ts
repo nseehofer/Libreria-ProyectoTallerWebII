@@ -1,9 +1,11 @@
 import { type Request, type Response } from "express";
 import { UsuarioRepository } from "../repository/usuario.repository.js"
 import { UsuarioService } from "../services/usuario.service.js";
+import { HashService } from "../services/hash.Service.js";
 
 const usuarioRepository = new UsuarioRepository();
-const usuarioService = new UsuarioService(usuarioRepository);
+const hashService = new HashService();
+const usuarioService = new UsuarioService(usuarioRepository,hashService);
 
 export class UsuarioController{
 

@@ -1,9 +1,11 @@
 import { type Request, type Response } from "express";
 import { AutenticadorService } from "../services/autenticador.service.js";
 import { UsuarioRepository } from "../repository/usuario.repository.js";
+import { HashService } from "../services/hash.Service.js";
 
 const usuarioRepository = new UsuarioRepository();
-const autenticadorService = new AutenticadorService(usuarioRepository);
+const hashService = new HashService();
+const autenticadorService = new AutenticadorService(usuarioRepository, hashService);
 
 export class AutenticadorController {
     constructor() { }
