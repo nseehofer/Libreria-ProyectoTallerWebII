@@ -14,3 +14,7 @@
         <button (click)="agregarAlCarrito(libro)">Agregar al carrito</button>
     </div>
 </div>
+
+@if (mostrarMsjExito()) {
+    <app-notificacion-exito [isVisible]="true"></app-notificacion-exito>
+}

@@ -1,0 +1,40 @@
+/* Contenedor del Toast */
+.toast-notification {
+    /* Fijo en la ventana de navegación (siempre visible) */
+    position: fixed; 
+    top: 20px; /* Separación superior */
+    right: 20px; /* Separación derecha */
+    
+    /* Estilo visual */
+    background-color: #38c172; /* Un verde vibrante para el éxito */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 2000; /* Asegura que esté por encima de todo, incluyendo el navbar */
+    
+    /* Disposición del contenido */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    /* Animación (opcional, para una entrada suave) */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Clases para controlar la visibilidad */
+.toast-notification.show {
+    opacity: 1;
+}
+
+/* Estilo del icono de éxito */
+.success-icon {
+    font-size: 1.5rem;
+}
+
+/* Aseguramos que el mensaje use la fuente de la app */
+.toast-message {
+    font-family: 'Merriweather', serif;
+    font-weight: 500;
+}

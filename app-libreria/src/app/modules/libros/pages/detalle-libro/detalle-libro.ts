@@ -1,11 +1,12 @@
-import { Component, Input, inject, OnInit } from '@angular/core';
+import { Component, Input, inject, OnInit, signal} from '@angular/core';
 import { Libro, LibroService } from '../../../../service/libros/libro.service';
 import { ActivatedRoute } from '@angular/router';
 import { CarritoService } from '../../../../service/carrito/carrito.service';
+import { NotificacionExito } from './notificacion-exito/notificacion-exito';
 
 @Component({
   selector: 'app-detalle-libro',
-  imports: [],
+  imports: [NotificacionExito],
   templateUrl: './detalle-libro.html',
   styleUrl: './detalle-libro.css',
 })
@@ -15,6 +16,8 @@ export class DetalleLibro implements OnInit {
   private route = inject(ActivatedRoute);
   private libroService = inject(LibroService);
   private carritoService = inject(CarritoService);
+
+  public mostrarMsjExito = signal(false);
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -33,5 +36,11 @@ export class DetalleLibro implements OnInit {
   agregarAlCarrito(libro: Libro): void {
     this.carritoService.agregarAlCarrito(libro);
     console.log(this.carritoService.cantidadLibros());
+
+    this.mostrarMsjExito.set(true);
+
+    setTimeout(() => {
+      this.mostrarMsjExito.set(false);
+    }, 2000);
   }
 }
