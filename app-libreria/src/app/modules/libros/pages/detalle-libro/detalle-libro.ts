@@ -1,12 +1,13 @@
-import { Component, Input, inject, OnInit, signal} from '@angular/core';
+import { Component, Input, inject, OnInit} from '@angular/core';
 import { Libro, LibroService } from '../../../../service/libros/libro.service';
 import { ActivatedRoute } from '@angular/router';
 import { CarritoService } from '../../../../service/carrito/carrito.service';
-import { NotificacionExito } from './notificacion-exito/notificacion-exito';
+import { ToastrService } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detalle-libro',
-  imports: [NotificacionExito],
+  imports: [CommonModule],
   templateUrl: './detalle-libro.html',
   styleUrl: './detalle-libro.css',
 })
@@ -16,8 +17,7 @@ export class DetalleLibro implements OnInit {
   private route = inject(ActivatedRoute);
   private libroService = inject(LibroService);
   private carritoService = inject(CarritoService);
-
-  public mostrarMsjExito = signal(false);
+  private toastr = inject(ToastrService);
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -28,6 +28,7 @@ export class DetalleLibro implements OnInit {
         },
         error: (error) => {
           console.error('Error al obtener el libro:', error);
+          this.toastr.error('No se pudo cargar el libro', 'Error');
         }
       });
     }
@@ -37,10 +38,10 @@ export class DetalleLibro implements OnInit {
     this.carritoService.agregarAlCarrito(libro);
     console.log(this.carritoService.cantidadLibros());
 
-    this.mostrarMsjExito.set(true);
-
-    setTimeout(() => {
-      this.mostrarMsjExito.set(false);
-    }, 2000);
+    this.toastr.success(
+  '<strong>Libro agregado al carrito</strong>',
+  '',
+  { enableHtml: true }
+);
   }
 }
