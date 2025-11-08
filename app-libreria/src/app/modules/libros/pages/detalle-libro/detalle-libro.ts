@@ -42,6 +42,6 @@ export class DetalleLibro implements OnInit {
   '<strong>Libro agregado al carrito</strong>',
   '',
   { enableHtml: true }
-);
+  );
   }
 }
