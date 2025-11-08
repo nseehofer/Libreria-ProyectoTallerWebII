@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "npx prisma generate && tsx watch src/index.ts",
     "build": "tsc",
     "strat": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +18,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.4",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^24.9.1",
+    "@types/node": "^24.10.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   },
