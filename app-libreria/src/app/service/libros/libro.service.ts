@@ -8,6 +8,7 @@ export interface Libro {
   descripcion: string;
   precio: number;
   autor: string;
+  img_src: string
   id_categoria: number;
 }
 
