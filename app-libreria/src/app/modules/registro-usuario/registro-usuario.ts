@@ -28,8 +28,15 @@ export class RegistroUsuario {
         alert('Usuario registrado correctamente');
         this.router.navigate(['/libros']);
       },
-      error: (err) => alert('Error al registrar usuario'),
-    });
+
+      error: (err) => {
+      if (err.error?.message === 'El email ya esta registrado') {
+        alert('El email ya esta registrado. Por favor, usá otro.');
+      } else {
+        alert('Error al registrar usuario.');
+      }
+    },
+  });
   }
 
   cancelar() {

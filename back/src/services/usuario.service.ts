@@ -21,6 +21,11 @@ export class UsuarioService{
             throw new Error('El nombre es obligatorio y debe ser un string')
         }
 
+        const usuarioExistente = await this.usuarioRepository.buscarUsuarioPorEmail(email);
+        if (usuarioExistente) {
+            throw new Error("EmailYaRegistrado");
+        }
+
         contrase_a =  await this.hashService.hashearPassword(contrase_a);
 
         return await this.usuarioRepository.createUsuario({
