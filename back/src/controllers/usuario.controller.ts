@@ -50,7 +50,11 @@ export class UsuarioController{
             
             const Usuario = await usuarioService.crearUsuario(usuarioACrear);
             res.status(201).json(Usuario)
-        } catch (error) {
+        } catch (error:any) {
+            if (error.message === "EmailYaRegistrado") {
+        return res.status(409).json({ message: "El email ya esta registrado" });
+        }
+
             res.status(500).json({ message: "No se pudo crear el usuario", error })
         }
     }
