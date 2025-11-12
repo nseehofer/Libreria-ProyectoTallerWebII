@@ -9,7 +9,6 @@ export class LibroController {
 
     constructor() { }
 
-
     public getLibros = async (req: Request, res: Response) => {
         try {
             const libros = await libroService.obtenerLibros();
