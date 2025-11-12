@@ -1,6 +1,6 @@
 <article class="card h-100 card-antigua">
   <div class="card-img-container">
-    <img src= "https://www.rae.es/sites/default/files/portada_cien_anos_de_soledad_0.jpg" 
+    <img [src] = "safeImgUrl" 
          alt="Portada de {{ libro.nombre }}" 
          class="card-img-top"
          style="height: 280px; object-fit: contain; background-color: var(--color-corteza);">
@@ -14,3 +14,7 @@
     <app-boton class="text-center" [routerLink]="['/libros', libro.id]"></app-boton>
   </div>
 </article>
+
+<script>
+  console.log('libro:', libro.nombre);
+</script>

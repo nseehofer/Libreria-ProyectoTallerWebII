@@ -1,16 +1,19 @@
+
 <div class="detalle-libro">
     <div class="detalle-libro-imagen">
-        <img 
-            src="https://www.rae.es/sites/default/files/portada_cien_anos_de_soledad_0.jpg" 
+        <img
+            [src] = "safeImgUrl"
             alt="Portada de {{ libro.nombre }}"
         >
     </div>
-    
+
     <div class="detalle-libro-contenido">
         <h3>{{ libro.nombre }}</h3>
         <h4>{{ libro.autor }}</h4>
         <p>{{ libro.descripcion }}</p>
         <div>${{ libro.precio }}</div>
         <button (click)="agregarAlCarrito(libro)">Agregar al carrito</button>
+
     </div>
 </div>
+

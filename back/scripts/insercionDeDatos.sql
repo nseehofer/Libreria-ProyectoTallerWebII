@@ -2,11 +2,9 @@ USE [db-libreria];
 GO
 
 INSERT INTO dbo.Usuario (email, contraseña, nombre, apellido, direccion) VALUES 
-('ana.gomez@example.com', 'Ana123!', 'Ana', 'Gómez', 'Av. Corrientes 1234, CABA'),
-('juan.perez@example.com', 'Juan456$', 'Juan', 'Pérez', 'Calle Falsa 123, Rosario'),
-('maria.lopez@example.com', 'Maria789#', 'María', 'López', 'Av. San Martín 456, Córdoba'),
-('carlos.mendez@example.com', 'Carlos321@', 'Carlos', 'Méndez', 'Ruta 8 Km 45, Pilar'),
-('lucia.fernandez@example.com', 'Lucia654%', 'Lucía', 'Fernéndez', 'Calle Mitre 789, Mendoza');
+('ana.gomez@example.com', '$2b$10$.JaY6FBh0tj0a5XKra2ae.A2i1XyXsj.ZDx4CFfVpNVo56NHY7jY6', 'Ana', 'Gómez', 'Av. Corrientes 1234, CABA'),
+('juan.perez@example.com', '$2b$10$iNe04Sa8pMnLJhYUOnumreh9aHfNuI8yaMxFM0RSYOVwco7xJTZEm', 'Juan', 'Pérez', 'Calle Falsa 123, Rosario'),
+('maria.lopez@example.com', '$2b$10$Ao2pvRgR50R8RA1gDr3ZDutxadKYypjyjqnH3BNWa5ISXloWj/QEK', 'María', 'López', 'Av. San Martín 456, Córdoba')
 GO
 
 INSERT INTO Categoria (nombre) VALUES 

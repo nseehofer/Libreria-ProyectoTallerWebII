@@ -1,6 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { HttpParams } from '@angular/common/http';
+import { FiltrosLibro } from '../../modules/libros/components/filtros/filtros';
+import { environment } from '../../../environments/environment.development';
 
 export interface Libro {
   id: number;
@@ -8,6 +11,7 @@ export interface Libro {
   descripcion: string;
   precio: number;
   autor: string;
+  img_src: string
   id_categoria: number;
 }
 
@@ -16,9 +20,8 @@ export interface Libro {
   providedIn: 'root'
 })
 
-
 export class LibroService {
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = environment.api_url;
   private http = inject(HttpClient);
 
   public getLibros(): Observable<Libro[]> {

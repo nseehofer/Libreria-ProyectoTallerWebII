@@ -1,9 +1,11 @@
 import { type Request, type Response } from "express";
 import { UsuarioRepository } from "../repository/usuario.repository.js"
 import { UsuarioService } from "../services/usuario.service.js";
+import { HashService } from "../services/hash.Service.js";
 
 const usuarioRepository = new UsuarioRepository();
-const usuarioService = new UsuarioService(usuarioRepository);
+const hashService = new HashService();
+const usuarioService = new UsuarioService(usuarioRepository,hashService);
 
 export class UsuarioController{
 
@@ -48,7 +50,11 @@ export class UsuarioController{
             
             const Usuario = await usuarioService.crearUsuario(usuarioACrear);
             res.status(201).json(Usuario)
-        } catch (error) {
+        } catch (error:any) {
+            if (error.message === "EmailYaRegistrado") {
+        return res.status(409).json({ message: "El email ya esta registrado" });
+        }
+
             res.status(500).json({ message: "No se pudo crear el usuario", error })
         }
     }
