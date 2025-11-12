@@ -1,9 +1,11 @@
-import { Component, OnDestroy, OnInit, Output, Input } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output, Input, signal } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
+import { CategoriaService, Categoria } from '../../../../service/categorias/categoria.service';
+import { inject } from '@angular/core';
 
 export interface FiltrosLibro {
   nombre: string | null;
@@ -18,6 +20,9 @@ export interface FiltrosLibro {
   styleUrl: './filtros.css',
 })
 export class Filtros implements OnInit, OnDestroy{
+  private categoriaService = inject(CategoriaService);
+  public categorias = signal<Categoria[]>([])
+  
   public filtrosGuardados : any = sessionStorage.getItem('filtros');
   public filtrosGuardadosDes : FiltrosLibro = JSON.parse(this.filtrosGuardados);
   
@@ -32,7 +37,16 @@ export class Filtros implements OnInit, OnDestroy{
   private formSub!: Subscription;
 
   ngOnInit(): void {
-    
+      this.categoriaService.getCategorias().subscribe({
+      next: (categorias) => {
+        this.categorias.set(categorias);
+        console.log(categorias);
+      },
+      error: (err) => {
+        console.error('Error al cargar lista de categorias:', err);
+      }
+    });
+
     this.formSub = this.filtroForm.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged()
@@ -43,7 +57,7 @@ export class Filtros implements OnInit, OnDestroy{
     if(this.filtrosGuardadosDes != null){
       this.filtroForm.setValue({
         nombre: this.filtrosGuardadosDes.nombre,
-        categoriaId: null,
+        categoriaId: this.filtrosGuardadosDes.categoriaId,
         precioMax: this.filtrosGuardadosDes.precioMax
       })
       this.filtroCambiado.emit(this.filtrosGuardadosDes as FiltrosLibro);

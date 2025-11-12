@@ -21,7 +21,6 @@ export class ListaLibros implements OnInit {
   private loader = inject(NgxUiLoaderService);
   private loadingService = inject(LoadingService);
 
-
   private librosMaestros = signal<Libro[]>([]);
   public librosMostrados = signal<Libro[]>([]);
 
