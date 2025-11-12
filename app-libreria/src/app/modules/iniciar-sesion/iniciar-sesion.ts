@@ -34,6 +34,7 @@ export class IniciarSesion {
     this.http.post<respuestaSignIn>(`${environment.api_url}/autenticador/signIn`, this.usuario, options).subscribe({
       next: (res) => {
         this.cookieService.set('token', res.token);
+        console.log(res.usuario)
         alert('Inicio de sesión exitoso');
         this.router.navigate(['/libros']);
       },
