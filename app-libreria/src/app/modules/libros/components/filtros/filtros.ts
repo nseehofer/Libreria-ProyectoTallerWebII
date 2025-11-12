@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output, Input } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
@@ -18,7 +18,9 @@ export interface FiltrosLibro {
   styleUrl: './filtros.css',
 })
 export class Filtros implements OnInit, OnDestroy{
-
+  public filtrosGuardados : any = sessionStorage.getItem('filtros');
+  public filtrosGuardadosDes : FiltrosLibro = JSON.parse(this.filtrosGuardados);
+  
   @Output() filtroCambiado = new EventEmitter<FiltrosLibro>();
 
   filtroForm: FormGroup = new FormGroup({
@@ -30,12 +32,23 @@ export class Filtros implements OnInit, OnDestroy{
   private formSub!: Subscription;
 
   ngOnInit(): void {
+    
     this.formSub = this.filtroForm.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged()
     ).subscribe(valores => {
       this.filtroCambiado.emit(valores as FiltrosLibro);
     });
+
+    if(this.filtrosGuardadosDes != null){
+      this.filtroForm.setValue({
+        nombre: this.filtrosGuardadosDes.nombre,
+        categoriaId: null,
+        precioMax: this.filtrosGuardadosDes.precioMax
+      })
+      this.filtroCambiado.emit(this.filtrosGuardadosDes as FiltrosLibro);
+    }
+
   }
 
   ngOnDestroy(): void {

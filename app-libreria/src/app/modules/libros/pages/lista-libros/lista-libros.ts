@@ -25,10 +25,7 @@ export class ListaLibros implements OnInit {
   private librosMaestros = signal<Libro[]>([]);
   public librosMostrados = signal<Libro[]>([]);
 
-
   ngOnInit(): void {
-
-
        // Detectar si fue una recarga con F5
      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
       const esRecarga = navigation.type === 'reload';
@@ -61,6 +58,7 @@ export class ListaLibros implements OnInit {
   }
   
   onFiltroCambiado(filtros: FiltrosLibro): void {
+    sessionStorage.setItem('filtros', JSON.stringify(filtros));
     let librosFiltrados = this.librosMaestros();
 
     if (filtros.nombre) {
