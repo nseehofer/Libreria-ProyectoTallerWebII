@@ -1,1 +1,32 @@
-<p>filtros works!</p>
+<form [formGroup]="filtroForm">
+    <h4 class="mb-3">Filtrar Libros</h4>
+    <div class="mb-3">
+        <label for="filtroNombre" class="form-label">Nombre:</label>
+        <input type="text" 
+            id="filtroNombre" 
+            class="form-control" 
+            formControlName="nombre" 
+            placeholder="Ej: Dune...">
+    </div>
+    <div class="mb-3">
+        <label for="filtroCategoria" class="form-label">Categoría:</label>
+        <select id="filtroCategoria" class="form-select" formControlName="categoriaId">
+            <option [ngValue]=null>Todas</option>
+            <option [ngValue]=1>Ficción</option>
+            <option [ngValue]=2>No Ficción</option>
+            <option [ngValue]=2>Ciencia</option>
+            <option [ngValue]=4>Historia</option>
+            <option [ngValue]=5>Biografía</option>
+            <option [ngValue]=6>Infantil</option>
+            <!-- Cambiar esto por un for, pero por ahora lo dejo asi para probar -->
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="filtroPrecio" class="form-label">Precio máximo:</label>
+        <input id="filtroPrecio" 
+            type="number" 
+            class="form-control" 
+            formControlName="precioMax" 
+            placeholder="Ingrese precio máximo">
+    </div>
+</form>
