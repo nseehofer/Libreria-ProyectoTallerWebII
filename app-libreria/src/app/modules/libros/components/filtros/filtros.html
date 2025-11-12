@@ -15,9 +15,7 @@
         @for (categoria of categorias(); track categoria.id) {
             <option [ngValue]="categoria.id"> {{categoria.nombre}}</option>
         } @empty {
-          <div class="col-12 text-center" style="color: var(--color-marfil);">
             <option [ngValue]=null>No hay categorias disponibles</option>
-          </div>
         }
         </select>
     </div>
