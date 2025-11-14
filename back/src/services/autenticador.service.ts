@@ -13,7 +13,7 @@ export class AutenticadorService {
             throw new Error("Credenciales invalidas");
         }
 
-        const datosUsuario = {id: usuario.id, email: usuario.email};
+        const datosUsuario = {id: usuario.id, email: usuario.email, nombre: usuario.nombre, apellido: usuario.apellido};
 
         const secreto = process.env.JWT_SECRET == undefined ? "secretoMalConfigurado" : process.env.JWT_SECRET;
 

@@ -1,16 +1,20 @@
+
 <div class="detalle-libro">
     <div class="detalle-libro-imagen">
-        <img 
+        <img
             [src] = "safeImgUrl"
             alt="Portada de {{ libro.nombre }}"
         >
     </div>
-    
+
     <div class="detalle-libro-contenido">
         <h3>{{ libro.nombre }}</h3>
+        <span>{{ libro.Categoria.nombre }}</span>
         <h4>{{ libro.autor }}</h4>
         <p>{{ libro.descripcion }}</p>
         <div>${{ libro.precio }}</div>
         <button (click)="agregarAlCarrito(libro)">Agregar al carrito</button>
+
     </div>
 </div>
+

@@ -1,6 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment.development';
+import { Categoria } from '../categorias/categoria.service';
 
 export interface Libro {
   id: number;
@@ -10,16 +12,15 @@ export interface Libro {
   autor: string;
   img_src: string
   id_categoria: number;
+  Categoria: Categoria;
 }
-
 
 @Injectable({
   providedIn: 'root'
 })
 
-
 export class LibroService {
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = environment.api_url;
   private http = inject(HttpClient);
 
   public getLibros(): Observable<Libro[]> {
