@@ -28,6 +28,7 @@ export class DetalleLibro implements OnInit {
       this.libroService.getLibroPorId(+id).subscribe({
         next: (libro) => {
           this.libro = libro;
+          console.log(this.libro);
           if (this.libro && this.libro.img_src) {
             this.safeImgUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.libro.img_src);
           }

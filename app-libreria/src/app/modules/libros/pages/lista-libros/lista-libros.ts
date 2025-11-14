@@ -2,10 +2,11 @@ import { Component, OnInit, signal } from '@angular/core';
 import { LibroService, Libro } from './../../../../service/libros/libro.service';
 import { inject } from '@angular/core';
 import { TarjetaLibro } from './../../components/tarjeta-libro/tarjeta-libro';
-import { Filtros, FiltrosLibro } from '../../components/filtros/filtros';
+import { Filtros } from '../../components/filtros/filtros';
 //import { Loading } from '../../../shared/loading/loading'; // y esta tambien?
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { LoadingService } from '../../../../service/loading/loading.service';
+import { FiltrosService, FiltrosLibro } from '../../../../service/filtros/filtros.service';
 import { CategoriaService } from '../../../../service/categorias/categoria.service';
 import { forkJoin } from 'rxjs';
 
@@ -22,6 +23,7 @@ export class ListaLibros implements OnInit {
   private libroService = inject(LibroService);
   private loader = inject(NgxUiLoaderService);
   private loadingService = inject(LoadingService);
+  private filtrosService = inject(FiltrosService);
 
   private librosMaestros = signal<Libro[]>([]);
   public librosMostrados = signal<Libro[]>([]);

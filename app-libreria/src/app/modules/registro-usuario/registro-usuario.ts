@@ -30,12 +30,14 @@ export class RegistroUsuario {
       },
 
       error: (err) => {
-      if (err.error?.message === 'El email ya esta registrado') {
-        alert('El email ya esta registrado. Por favor, usá otro.');
-      } else {
-        alert('Error al registrar usuario.');
-      }
-    },
-  });
+        if (err.error?.message === 'El email ya esta registrado') {
+          alert('El email ya esta registrado. Por favor, usá otro.');
+        } else if (err.error?.message?.includes('contraseña')) {
+          alert(err.error.message);
+        } else {
+          alert('Error al registrar usuario.');
+        }
+      },
+    });
   }
 }

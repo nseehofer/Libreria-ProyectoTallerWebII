@@ -6,12 +6,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { CategoriaService, Categoria } from '../../../../service/categorias/categoria.service';
 import { inject } from '@angular/core';
-
-export interface FiltrosLibro {
-  nombre: string | null;
-  categoriaId: number | null;
-  precioMax: number | null;
-}
+import { FiltrosService, FiltrosLibro } from '../../../../service/filtros/filtros.service';
 
 @Component({
   selector: 'app-filtros',
@@ -22,9 +17,7 @@ export interface FiltrosLibro {
 export class Filtros implements OnInit, OnDestroy{
   private categoriaService = inject(CategoriaService);
   public categorias = signal<Categoria[]>([])
-  
-  public filtrosGuardados : any = sessionStorage.getItem('filtros');
-  public filtrosGuardadosDes : FiltrosLibro = JSON.parse(this.filtrosGuardados);
+  private filtrosService = inject(FiltrosService);
   
   @Output() filtroCambiado = new EventEmitter<FiltrosLibro>();
 
@@ -40,7 +33,6 @@ export class Filtros implements OnInit, OnDestroy{
       this.categoriaService.getCategorias().subscribe({
       next: (categorias) => {
         this.categorias.set(categorias);
-        console.log(categorias);
       },
       error: (err) => {
         console.error('Error al cargar lista de categorias:', err);
@@ -53,14 +45,15 @@ export class Filtros implements OnInit, OnDestroy{
     ).subscribe(valores => {
       this.filtroCambiado.emit(valores as FiltrosLibro);
     });
+    const filtrosGuardados : FiltrosLibro = this.filtrosService.getFiltros();
 
-    if(this.filtrosGuardadosDes != null){
+    if(filtrosGuardados != null){
       this.filtroForm.setValue({
-        nombre: this.filtrosGuardadosDes.nombre,
-        categoriaId: this.filtrosGuardadosDes.categoriaId,
-        precioMax: this.filtrosGuardadosDes.precioMax
+        nombre: filtrosGuardados.nombre,
+        categoriaId: filtrosGuardados.categoriaId,
+        precioMax: filtrosGuardados.precioMax
       })
-      this.filtroCambiado.emit(this.filtrosGuardadosDes as FiltrosLibro);
+      this.filtroCambiado.emit(filtrosGuardados as FiltrosLibro);
     }
 
   }
