@@ -78,7 +78,7 @@ export class ListaLibros implements OnInit {
       }
 
       onFiltroCambiado(filtros: FiltrosLibro): void {
-        sessionStorage.setItem('filtros', JSON.stringify(filtros));
+        this.filtrosService.setFiltros(filtros);
         let librosFiltrados = this.librosMaestros();
       
         if (filtros.nombre) {
