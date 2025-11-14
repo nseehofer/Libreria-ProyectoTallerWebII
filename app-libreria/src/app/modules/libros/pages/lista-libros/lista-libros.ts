@@ -38,7 +38,6 @@ export class ListaLibros implements OnInit {
     const esRecarga = navigation.type === 'reload';
 
     if (esRecarga) {
-      console.log('Recarga detectada — iniciando spinner');
       this.loadingService.startManually();
     }
 
@@ -63,8 +62,6 @@ export class ListaLibros implements OnInit {
       },
 
       error: (err) => {
-        console.error('Error al cargar datos iniciales:', err);
-
         this.isLoading.set(false);
         this.loadingService.stopManually();
       },

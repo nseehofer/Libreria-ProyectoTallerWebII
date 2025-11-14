@@ -29,8 +29,6 @@ export class IniciarSesion {
     this.autenticadorService.iniciarSesion(this.usuario.email, this.usuario.contrase_a)
       .subscribe({
         next: (res) => {
-
-          alert('Inicio de sesión exitoso');
           this.router.navigate(['/libros']);
         },
         error: (err) => {
