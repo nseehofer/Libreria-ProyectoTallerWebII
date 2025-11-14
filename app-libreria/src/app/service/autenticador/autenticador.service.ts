@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap, catchError, of } from 'rxjs';
 //import { respuestaSignIn } from '../../modules/iniciar-sesion/interfaces/respuesta-signIn.ts';
-
+import { environment } from '../../../environments/environment.development';
 export type Usuario = respuestaSignIn['usuario'];
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutenticadorService {
-  private apiUrl = 'http://localhost:3000/api/autenticador';
+  private apiUrl = environment.api_url;
 
   private usuarioActualSubject = new BehaviorSubject<Usuario | null>(null);
 

@@ -40,7 +40,6 @@ export class Filtros implements OnInit, OnDestroy{
       this.categoriaService.getCategorias().subscribe({
       next: (categorias) => {
         this.categorias.set(categorias);
-        console.log(categorias);
       },
       error: (err) => {
         console.error('Error al cargar lista de categorias:', err);
