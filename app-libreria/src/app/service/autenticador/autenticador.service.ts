@@ -4,16 +4,20 @@ import { BehaviorSubject, Observable, tap, catchError, of } from 'rxjs';
 //import { respuestaSignIn } from '../../modules/iniciar-sesion/interfaces/respuesta-signIn.ts';
 import { environment } from '../../../environments/environment.development';
 export type Usuario = respuestaSignIn['usuario'];
+import { FiltrosService } from '../filtros/filtros.service';
+import { inject } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutenticadorService {
-  private apiUrl = environment.api_url;
+  private apiUrl = `${environment.api_url}/autenticador`;
 
   private usuarioActualSubject = new BehaviorSubject<Usuario | null>(null);
 
   public usuarioActual$ = this.usuarioActualSubject.asObservable();
+
+   private filtrosService = inject(FiltrosService);
 
   constructor(private http: HttpClient) { }
 
@@ -48,7 +52,7 @@ export class AutenticadorService {
   }
 
   cerrarSesion() {
-    localStorage.removeItem('filtros');
+    this.filtrosService.removeFiltros();
     return this.http.post(`${this.apiUrl}/cerrar-sesion`, {}, {
       withCredentials: true
     }).pipe(
