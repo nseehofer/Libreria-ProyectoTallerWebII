@@ -13,6 +13,7 @@
 .card-img-container {
   height: 280px;
   overflow: hidden;
+  margin-top: 0;
 }
 
 .card-img-container .card-img-top {
@@ -58,3 +59,25 @@
   opacity: 0.8;
   font-size: .8rem;
 }
+
+.categoria-libro {
+  font-size: 0.9rem;
+  background-color: var(--color-pino);
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px 5px 0 0;
+  font-weight: bold;
+  font-family: 'Merriweather', serif;
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  display: block;
+}
+
+.card-text.categoria-libro {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+
