@@ -2,7 +2,7 @@
   <div class="contenedor-formulario-interno">
     <h2 class="titulo-formulario">Registro de Usuario</h2>
 
-    <form (ngSubmit)="registrarUsuario()" #form="ngForm" class="formulario">
+    <form (ngSubmit)="registrarUsuario()" #form="ngForm" class="formulario" ngNativeValidate>
       <div class="grupo-formulario">
         <label class="etiqueta-formulario">Nombre</label>
         <input 

@@ -2,7 +2,7 @@
   <div class="contenedor-formulario-interno">
     <h2 class="titulo-formulario">Iniciar sesión</h2>
 
-    <form (ngSubmit)="iniciarSesion()" #form="ngForm" class="formulario">
+    <form (ngSubmit)="iniciarSesion()" #form="ngForm" class="formulario" ngNativeValidate>
       <div class="grupo-formulario">
         <label class="etiqueta-formulario">Email</label>
         <input 
