@@ -1,8 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { HttpParams } from '@angular/common/http';
-import { FiltrosLibro } from '../../modules/libros/components/filtros/filtros';
 import { environment } from '../../../environments/environment.development';
 
 export interface Libro {
@@ -14,7 +12,6 @@ export interface Libro {
   img_src: string
   id_categoria: number;
 }
-
 
 @Injectable({
   providedIn: 'root'

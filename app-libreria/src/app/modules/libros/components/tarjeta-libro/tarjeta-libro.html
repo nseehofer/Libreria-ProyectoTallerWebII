@@ -10,6 +10,7 @@
     <h5 class="card-title">{{ libro.nombre }}</h5>
     <h6 class="card-subtitle mb-2">{{ libro.autor }}</h6>
     <p class="card-text descripcion-corta">{{ libro.descripcion }}</p>
+    <p class="card-text text-muted" style="font-size: 0.9rem;">{{ nombreCategoria || 'Sin Categoría' }}</p>
     <h4 class="card-precio text-start my-3">{{ libro.precio | currency }}</h4>
     <app-boton class="text-center" [routerLink]="['/libros', libro.id]"></app-boton>
   </div>
