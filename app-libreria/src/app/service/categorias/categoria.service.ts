@@ -21,14 +21,4 @@ export class CategoriaService {
     return this.http.get<Categoria[]>(url);
   }
 
-  // public getCategoriaById(id: number): string{
-  //   const url = `${this.apiUrl}/categorias`;
-  //   var categorias = this.http.get<Categoria[]>(url)
-    
-  //   const categoria = categorias.find(cat => cat.id === id).nombre;
-
-  //   return categoria
-  // }
-
-
 }

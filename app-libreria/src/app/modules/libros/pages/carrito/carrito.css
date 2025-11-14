@@ -25,3 +25,25 @@
 ::ng-deep .ngx-toastr {
   margin-top: 75px !important;
 }
+
+@media (max-width: 768px) {
+  .carrito {
+    margin: 16px 12px;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .carrito h2 {
+    font-size: 20px;
+    margin: 0 0 12px 0;
+  }
+
+  .carrito > div {
+    gap: 8px;
+  }
+
+  .carrito > p {
+    padding: 16px;
+    font-size: 14px;
+  }
+}

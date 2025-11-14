@@ -83,3 +83,98 @@
   background: #f3f4f6;
   color: #ef4444; 
 }
+
+@media (max-width: 768px) {
+  .item-carrito {
+    flex-direction: row;
+    min-width: unset;
+    min-height: auto;
+    height: auto;
+    padding: 12px;
+    margin: 8px 0;
+    gap: 12px;
+  }
+
+  .item-carrito > img {
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+  }
+
+  .item-carrito > div {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .item-carrito > div > a > h3 {
+    font-size: 14px;
+    margin: 0 0 4px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .item-carrito > div > p:first-of-type {
+    font-size: 12px;
+    margin: 0 0 6px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .item-carrito > div > p:last-of-type {
+    font-size: 14px;
+  }
+
+  .item-carrito > button {
+    flex-shrink: 0;
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 480px) {
+  .item-carrito {
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .item-carrito > img {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+  }
+
+  .item-carrito > div {
+    flex: 1 1 calc(100% - 70px);
+    min-width: 0;
+  }
+
+  .item-carrito > div > a > h3 {
+    font-size: 13px;
+  }
+
+  .item-carrito > div > p:first-of-type {
+    font-size: 11px;
+  }
+
+  .item-carrito > div > p:last-of-type {
+    font-size: 13px;
+  }
+
+  .item-carrito > button {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-top: 4px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+  }
+
+  .item-carrito > button:hover {
+    background: #f3f4f6;
+  }
+}
