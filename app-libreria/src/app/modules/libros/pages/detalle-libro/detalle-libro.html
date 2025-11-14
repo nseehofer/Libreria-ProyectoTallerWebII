@@ -1,3 +1,8 @@
+<div class="container text-center my-4">
+    <a routerLink="/libros" class="btn" style="background: var(--color-pino); color: var(--color-marfil);">
+      <i class="bi bi-arrow-left me-2"></i>Volver a la lista de libros
+    </a>
+</div>
 
 <div class="detalle-libro">
     <div class="detalle-libro-imagen">
@@ -13,7 +18,5 @@
         <p>{{ libro.descripcion }}</p>
         <div>${{ libro.precio }}</div>
         <button (click)="agregarAlCarrito(libro)">Agregar al carrito</button>
-
     </div>
 </div>
-

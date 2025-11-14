@@ -1,6 +1,6 @@
 import { Component, Input, inject, OnInit} from '@angular/core';
 import { Libro, LibroService } from '../../../../service/libros/libro.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CarritoService } from '../../../../service/carrito/carrito.service';
 import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
@@ -8,7 +8,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detalle-libro',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './detalle-libro.html',
   styleUrl: './detalle-libro.css',
 })
