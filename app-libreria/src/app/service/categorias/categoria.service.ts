@@ -20,4 +20,5 @@ export class CategoriaService {
     const url = `${this.apiUrl}/categorias`;
     return this.http.get<Categoria[]>(url);
   }
+
 }

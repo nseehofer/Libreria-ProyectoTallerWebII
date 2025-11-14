@@ -1,4 +1,5 @@
 <article class="card h-100 card-antigua">
+  <p class="card-text categoria-libro">{{ nombreCategoria || 'Sin Categoría' }}</p>
   <div class="card-img-container">
     <img [src] = "safeImgUrl" 
          alt="Portada de {{ libro.nombre }}" 

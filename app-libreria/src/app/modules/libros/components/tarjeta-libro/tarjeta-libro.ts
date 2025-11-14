@@ -18,9 +18,13 @@ export class TarjetaLibro implements OnInit {
   private sanitizer: DomSanitizer = inject(DomSanitizer);
   safeImgUrl!: SafeResourceUrl;
 
+  @Input() nombreCategoria: string | undefined;
+
+
   ngOnInit(): void {
     if (this.libro && this.libro.img_src) {
       this.safeImgUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.libro.img_src);
     }
+
   }
 }

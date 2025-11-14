@@ -40,8 +40,4 @@ export class RegistroUsuario {
       },
     });
   }
-
-  cancelar() {
-    this.router.navigate(['/libros']);
-  }
 }

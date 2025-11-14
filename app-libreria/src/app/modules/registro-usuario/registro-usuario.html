@@ -1,45 +1,70 @@
-<div class="container mt-4">
-  <h2>Registro de Usuario</h2>
+<div class="contenedor-formulario">
+  <div class="contenedor-formulario-interno">
+    <h2 class="titulo-formulario">Registro de Usuario</h2>
 
-  <form (ngSubmit)="registrarUsuario()" #form="ngForm">
-    <div class="mb-3">
-      <label>Nombre</label>
-      <input type="text" class="form-control" [(ngModel)]="usuario.nombre" name="nombre" required />
-    </div>
+    <form (ngSubmit)="registrarUsuario()" #form="ngForm" class="formulario">
+      <div class="grupo-formulario">
+        <label class="etiqueta-formulario">Nombre</label>
+        <input 
+          type="text" 
+          class="entrada-formulario" 
+          [(ngModel)]="usuario.nombre" 
+          name="nombre" 
+          required 
+          placeholder="Juan"
+        />
+      </div>
 
-    <div class="mb-3">
-      <label>Apellido</label>
-      <input
-        type="text"
-        class="form-control"
-        [(ngModel)]="usuario.apellido"
-        name="apellido"
-        required
-      />
-    </div>
+      <div class="grupo-formulario">
+        <label class="etiqueta-formulario">Apellido</label>
+        <input
+          type="text"
+          class="entrada-formulario"
+          [(ngModel)]="usuario.apellido"
+          name="apellido"
+          required
+          placeholder="Pérez"
+        />
+      </div>
 
-    <div class="mb-3">
-      <label>Dirección</label>
-      <input type="text" class="form-control" [(ngModel)]="usuario.direccion" name="direccion" />
-    </div>
+      <div class="grupo-formulario">
+        <label class="etiqueta-formulario">Dirección</label>
+        <input 
+          type="text" 
+          class="entrada-formulario" 
+          [(ngModel)]="usuario.direccion" 
+          name="direccion" 
+          placeholder="Calle 123, Ciudad"
+        />
+      </div>
 
-    <div class="mb-3">
-      <label>Email</label>
-      <input type="email" class="form-control" [(ngModel)]="usuario.email" name="email" required />
-    </div>
+      <div class="grupo-formulario">
+        <label class="etiqueta-formulario">Email</label>
+        <input 
+          type="email" 
+          class="entrada-formulario" 
+          [(ngModel)]="usuario.email" 
+          name="email" 
+          required 
+          placeholder="tu@email.com"
+        />
+      </div>
 
-    <div class="mb-3">
-      <label>Contraseña</label>
-      <input
-        type="password"
-        class="form-control"
-        [(ngModel)]="usuario.contrase_a"
-        name="contraseña"
-        required
-      />
-    </div>
+      <div class="grupo-formulario">
+        <label class="etiqueta-formulario">Contraseña</label>
+        <input
+          type="password"
+          class="entrada-formulario"
+          [(ngModel)]="usuario.contrase_a"
+          name="contraseña"
+          required
+          placeholder="••••••••"
+        />
+      </div>
 
-    <button type="submit" class="btn btn-primary me-2">Registrar</button>
-    <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
-  </form>
+      <div class="acciones-formulario">
+        <button type="submit" class="boton boton-primario">Registrar</button>
+      </div>
+    </form>
+  </div>
 </div>

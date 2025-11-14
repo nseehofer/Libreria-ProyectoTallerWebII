@@ -10,7 +10,7 @@
         
         @for (libro of librosMostrados(); track libro.id) {
           <div class="col">
-            <app-tarjeta-libro [libro]="libro"></app-tarjeta-libro>
+            <app-tarjeta-libro [libro]="libro" [nombreCategoria]="categoriasMap.get(libro.id_categoria)"></app-tarjeta-libro>
           </div>
         } @empty {
           <div class="col-12 text-center" style="color: var(--color-marfil);">

@@ -6,6 +6,8 @@ import { Filtros, FiltrosLibro } from '../../components/filtros/filtros';
 //import { Loading } from '../../../shared/loading/loading'; // y esta tambien?
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { LoadingService } from '../../../../service/loading/loading.service';
+import { CategoriaService } from '../../../../service/categorias/categoria.service';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-lista-libros',
@@ -23,12 +25,15 @@ export class ListaLibros implements OnInit {
 
   private librosMaestros = signal<Libro[]>([]);
   public librosMostrados = signal<Libro[]>([]);
+  
+  private categoriaService = inject(CategoriaService)
+  public categoriasMap = new Map<number, string>();
+
 
   ngOnInit(): void {
-       // Detectar si fue una recarga con F5
-     const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      const esRecarga = navigation.type === 'reload';
-
+    // Detectar si fue una recarga con F5
+    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const esRecarga = navigation.type === 'reload';
 
     if (esRecarga) {
       console.log('Recarga detectada — iniciando spinner');
@@ -36,20 +41,34 @@ export class ListaLibros implements OnInit {
     }
 
 
-      this.libroService.getLibros().subscribe({
-      next: (libros) => {
+    // (Asumo que 'esRecarga' es una variable que ya tienes definida en tu componente)
+
+    forkJoin({
+      libros: this.libroService.getLibros(),
+      categorias: this.categoriaService.getCategorias() // Añade la segunda llamada
+    }).subscribe({
+
+      next: ({ libros, categorias }) => {
+
+        categorias.forEach(cat => {
+          this.categoriasMap.set(cat.id, cat.nombre);
+        });
+      
         this.librosMaestros.set(libros);
         this.librosMostrados.set(libros);
+
         this.isLoading.set(false);
       },
+
       error: (err) => {
-        console.error('Error al cargar la lista maestra de libros:', err);
-                  this.isLoading.set(false);
-          this.loadingService.stopManually();
+        console.error('Error al cargar datos iniciales:', err);
+
+        this.isLoading.set(false);
+        this.loadingService.stopManually();
       },
-        complete: () => {
-           if (esRecarga) {
-          // Esperamos un poco antes de detener manualmente el spinner
+
+      complete: () => {
+        if (esRecarga) {
           setTimeout(() => this.loadingService.stopManually(), 300);
         }
       }
