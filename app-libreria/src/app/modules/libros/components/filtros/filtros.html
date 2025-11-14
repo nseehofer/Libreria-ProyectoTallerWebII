@@ -12,13 +12,11 @@
         <label for="filtroCategoria" class="form-label">Categoría:</label>
         <select id="filtroCategoria" class="form-select" formControlName="categoriaId">
             <option [ngValue]=null>Todas</option>
-            <option [ngValue]=1>Ficción</option>
-            <option [ngValue]=2>No Ficción</option>
-            <option [ngValue]=2>Ciencia</option>
-            <option [ngValue]=4>Historia</option>
-            <option [ngValue]=5>Biografía</option>
-            <option [ngValue]=6>Infantil</option>
-            <!-- Cambiar esto por un for, pero por ahora lo dejo asi para probar -->
+        @for (categoria of categorias(); track categoria.id) {
+            <option [ngValue]="categoria.id"> {{categoria.nombre}}</option>
+        } @empty {
+            <option [ngValue]=null>No hay categorias disponibles</option>
+        }
         </select>
     </div>
     <div class="mb-3">
