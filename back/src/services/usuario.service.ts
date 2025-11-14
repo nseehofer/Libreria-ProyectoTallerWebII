@@ -26,6 +26,12 @@ export class UsuarioService{
             throw new Error("EmailYaRegistrado");
         }
 
+        const contrasenaCompleja = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._\-])[A-Za-z\d@$!%*?&._\-]{8,}$/;
+
+        if (!contrasenaCompleja.test(contrase_a)) {
+            throw new Error("PasswordInsegura");
+        }
+
         contrase_a =  await this.hashService.hashearPassword(contrase_a);
 
         return await this.usuarioRepository.createUsuario({
