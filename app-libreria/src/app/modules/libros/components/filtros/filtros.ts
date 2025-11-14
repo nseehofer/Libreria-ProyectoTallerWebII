@@ -23,7 +23,7 @@ export class Filtros implements OnInit, OnDestroy{
   private categoriaService = inject(CategoriaService);
   public categorias = signal<Categoria[]>([])
   
-  public filtrosGuardados : any = sessionStorage.getItem('filtros');
+  public filtrosGuardados : any = localStorage.getItem('filtros');
   public filtrosGuardadosDes : FiltrosLibro = JSON.parse(this.filtrosGuardados);
   
   @Output() filtroCambiado = new EventEmitter<FiltrosLibro>();

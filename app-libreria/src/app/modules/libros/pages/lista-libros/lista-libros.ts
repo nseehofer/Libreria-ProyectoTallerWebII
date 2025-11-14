@@ -57,7 +57,7 @@ export class ListaLibros implements OnInit {
   }
   
   onFiltroCambiado(filtros: FiltrosLibro): void {
-    sessionStorage.setItem('filtros', JSON.stringify(filtros));
+    localStorage.setItem('filtros', JSON.stringify(filtros));
     let librosFiltrados = this.librosMaestros();
 
     if (filtros.nombre) {

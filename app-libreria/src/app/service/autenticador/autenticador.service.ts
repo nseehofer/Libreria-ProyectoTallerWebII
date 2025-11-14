@@ -48,7 +48,7 @@ export class AutenticadorService {
   }
 
   cerrarSesion() {
-
+    localStorage.removeItem('filtros');
     return this.http.post(`${this.apiUrl}/cerrar-sesion`, {}, {
       withCredentials: true
     }).pipe(
