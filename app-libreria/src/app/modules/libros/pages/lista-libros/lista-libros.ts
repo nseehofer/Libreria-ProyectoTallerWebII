@@ -27,7 +27,7 @@ export class ListaLibros implements OnInit {
 
   private librosMaestros = signal<Libro[]>([]);
   public librosMostrados = signal<Libro[]>([]);
-  
+
   private categoriaService = inject(CategoriaService)
   public categoriasMap = new Map<number, string>();
 
@@ -55,7 +55,7 @@ export class ListaLibros implements OnInit {
         categorias.forEach(cat => {
           this.categoriasMap.set(cat.id, cat.nombre);
         });
-      
+
         this.librosMaestros.set(libros);
         this.librosMostrados.set(libros);
 
@@ -80,7 +80,7 @@ export class ListaLibros implements OnInit {
       onFiltroCambiado(filtros: FiltrosLibro): void {
         this.filtrosService.setFiltros(filtros);
         let librosFiltrados = this.librosMaestros();
-      
+
         if (filtros.nombre) {
           const nombreFiltro = filtros.nombre.toLowerCase();
           librosFiltrados = librosFiltrados.filter(libro =>
@@ -88,13 +88,13 @@ export class ListaLibros implements OnInit {
             libro.autor.toLowerCase().includes(nombreFiltro)
           );
         }
-      
+
         if (filtros.categoriaId) {
           librosFiltrados = librosFiltrados.filter(libro =>
             libro.id_categoria === filtros.categoriaId
           );
         }
-      
+
         if (filtros.precioMax && filtros.precioMax > 0) {
           const precioMaximo = filtros.precioMax;
           librosFiltrados = librosFiltrados.filter(libro =>
