@@ -55,6 +55,11 @@ export class UsuarioController{
         return res.status(409).json({ message: "El email ya esta registrado" });
         }
 
+        if (error.message === "PasswordInsegura") {
+        return res.status(400).json({
+        message: "La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un símbolo.",
+        });
+    }
             res.status(500).json({ message: "No se pudo crear el usuario", error })
         }
     }
