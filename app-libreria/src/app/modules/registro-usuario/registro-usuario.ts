@@ -15,7 +15,7 @@ import { inject } from '@angular/core'
 })
 export class RegistroUsuario {
 
-  usuario : Usuario = {
+  usuario: Usuario = {
     nombre: '',
     apellido: '',
     email: '',
@@ -23,12 +23,14 @@ export class RegistroUsuario {
     direccion: '',
   };
 
+  errorRegistro: string | null = null;
+
   private usuarioService = inject(UsuarioService);
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   registrarUsuario() {
-
+    this.errorRegistro = null;
     this.usuarioService.registrarUsuario(this.usuario).subscribe({
       next: (res) => {
         this.router.navigate(['/libros']);
@@ -36,11 +38,15 @@ export class RegistroUsuario {
 
       error: (err) => {
         if (err.error?.message === 'El email ya esta registrado') {
-          alert('El email ya esta registrado. Por favor, usá otro.');
+          this.errorRegistro = err.error.message;
+
         } else if (err.error?.message?.includes('contraseña')) {
-          alert(err.error.message);
+
+          this.errorRegistro = err.error.message;
+
         } else {
-          alert('Error al registrar usuario.');
+          this.errorRegistro = err.error.message;
+
         }
       },
     });

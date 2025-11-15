@@ -6,6 +6,8 @@ import { environment } from '../../../environments/environment.development';
 export type Usuario = respuestaSignIn['usuario'];
 import { FiltrosService } from '../filtros/filtros.service';
 import { inject } from '@angular/core';
+import { Carrito } from '../../modules/libros/pages/carrito/carrito';
+import { CarritoService } from '../carrito/carrito.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,9 @@ export class AutenticadorService {
 
   public usuarioActual$ = this.usuarioActualSubject.asObservable();
 
-   private filtrosService = inject(FiltrosService);
+  private filtrosService = inject(FiltrosService);
+
+  private carritoService = inject(CarritoService);
 
   constructor(private http: HttpClient) { }
 
@@ -53,6 +57,7 @@ export class AutenticadorService {
 
   cerrarSesion() {
     this.filtrosService.removeFiltros();
+    this.carritoService.vaciarCarrito();
     return this.http.post(`${this.apiUrl}/cerrar-sesion`, {}, {
       withCredentials: true
     }).pipe(

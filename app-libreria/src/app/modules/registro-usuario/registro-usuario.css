@@ -118,6 +118,17 @@
   transform: translateY(0);
 }
 
+.error-registro {
+  color: #D32F2F; /* Un color rojo oscuro */
+  background-color: #FFCDD2; /* Un fondo rojo muy claro */
+  border: 1px solid #D32F2F;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
 /* Responsive para móviles */
 @media (max-width: 768px) {
   .contenedor-formulario {

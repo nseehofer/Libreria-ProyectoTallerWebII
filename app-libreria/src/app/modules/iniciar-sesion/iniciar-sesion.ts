@@ -10,6 +10,8 @@ import { AutenticadorService } from '../../service/autenticador/autenticador.ser
   styleUrl: './iniciar-sesion.css',
   providers: []
 })
+
+
 export class IniciarSesion {
 
 
@@ -17,14 +19,14 @@ export class IniciarSesion {
     email: '',
     contrase_a: ''
   }
-
+  errorInicioSesion: string | null = null;
   constructor(
     private router: Router,
     private autenticadorService: AutenticadorService
   ) { }
 
   iniciarSesion() {
-
+    this.errorInicioSesion = null;
 
     this.autenticadorService.iniciarSesion(this.usuario.email, this.usuario.contrase_a)
       .subscribe({
@@ -32,8 +34,7 @@ export class IniciarSesion {
           this.router.navigate(['/libros']);
         },
         error: (err) => {
-          console.error(err);
-          alert('Error al iniciar sesion');
+          this.errorInicioSesion = 'Email o contraseña incorrectos. Por favor, inténtalo de nuevo.';
         },
       });
   }

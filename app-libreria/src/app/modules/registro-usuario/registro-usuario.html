@@ -5,12 +5,12 @@
     <form (ngSubmit)="registrarUsuario()" #form="ngForm" class="formulario" ngNativeValidate>
       <div class="grupo-formulario">
         <label class="etiqueta-formulario">Nombre</label>
-        <input 
-          type="text" 
-          class="entrada-formulario" 
-          [(ngModel)]="usuario.nombre" 
-          name="nombre" 
-          required 
+        <input
+          type="text"
+          class="entrada-formulario"
+          [(ngModel)]="usuario.nombre"
+          name="nombre"
+          required
           placeholder="Juan"
         />
       </div>
@@ -29,23 +29,24 @@
 
       <div class="grupo-formulario">
         <label class="etiqueta-formulario">Dirección</label>
-        <input 
-          type="text" 
-          class="entrada-formulario" 
-          [(ngModel)]="usuario.direccion" 
-          name="direccion" 
+        <input
+          type="text"
+          class="entrada-formulario"
+          [(ngModel)]="usuario.direccion"
+          name="direccion"
+          required
           placeholder="Calle 123, Ciudad"
         />
       </div>
 
       <div class="grupo-formulario">
         <label class="etiqueta-formulario">Email</label>
-        <input 
-          type="email" 
-          class="entrada-formulario" 
-          [(ngModel)]="usuario.email" 
-          name="email" 
-          required 
+        <input
+          type="email"
+          class="entrada-formulario"
+          [(ngModel)]="usuario.email"
+          name="email"
+          required
           placeholder="tu@email.com"
         />
       </div>
@@ -61,7 +62,10 @@
           placeholder="••••••••"
         />
       </div>
-
+      @if (errorRegistro != null) {
+      <div class="error-registro">
+        {{ errorRegistro }}
+      </div>}
       <div class="acciones-formulario">
         <button type="submit" class="boton boton-primario">Registrar</button>
       </div>

@@ -5,28 +5,19 @@
     <form (ngSubmit)="iniciarSesion()" #form="ngForm" class="formulario" ngNativeValidate>
       <div class="grupo-formulario">
         <label class="etiqueta-formulario">Email</label>
-        <input 
-          type="email" 
-          class="entrada-formulario" 
-          name="email" 
-          [(ngModel)]="usuario.email" 
-          required 
-          placeholder="tu@email.com"
-        />
+        <input type="email" class="entrada-formulario" name="email" [(ngModel)]="usuario.email" required
+          placeholder="tu@email.com" />
       </div>
 
       <div class="grupo-formulario">
         <label class="etiqueta-formulario">Contraseña</label>
-        <input 
-          type="password" 
-          class="entrada-formulario" 
-          name="contrase_a" 
-          [(ngModel)]="usuario.contrase_a" 
-          required
-          placeholder="••••••••"
-        />
+        <input type="password" class="entrada-formulario" name="contrase_a" [(ngModel)]="usuario.contrase_a" required
+          placeholder="••••••••" />
       </div>
-
+      @if (errorInicioSesion != null) {
+      <div class="error-login">
+        {{ errorInicioSesion }}
+      </div>}
       <div class="acciones-formulario">
         <button type="submit" class="boton boton-primario">Iniciar Sesión</button>
       </div>
