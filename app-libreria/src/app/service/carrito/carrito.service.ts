@@ -6,7 +6,6 @@ export interface ItemCarrito {
   libro: Libro;
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
