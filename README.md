@@ -15,6 +15,8 @@
 
     * Crea un archivo llamado `.env` en la raíz de la carpeta `/back`.
     * Añade la variable `DATABASE_URL` con tu string de conexión.
+    * Añade la variable `JWT_SECRET` con tu secreto de token.
+    * Añade la variable `NODE_ENV` con el valor `development/desarrollo`             dependiendo del entorno de trabajo
 
     **Ejemplo de plantilla para `.env` (usando SQL Server):**
     ```ini
@@ -39,4 +41,5 @@ Una vez completada la instalación, puedes iniciar el servidor:
 ```bash
 # Inicia el servidor en modo de desarrollo (si tienes nodemon o similar)
 npm run dev
+
 
