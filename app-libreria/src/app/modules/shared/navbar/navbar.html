@@ -3,14 +3,16 @@
 
 <nav class="navbar navbar-light" style="background-color: #F5EFE6;">
   <div class="container-fluid">
+
+    <div class="flex-grow-1">
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuResponsive" aria-controls="menuResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       
-      <div class="collapse navbar-collapse mt-2" id="menuResponsive">
+      <div class="collapse navbar-collapse" id="menuResponsive">
         @if (usuario$ | async; as usuario) {
-          <div class="navbar-nav d-flex flex-row align-items-start gap-2">
+          <div class="navbar-nav d-flex flex-row align-items-center gap-3">
             <span class="navbar-text" style="color: #4A3F35;">
               ¡Hola, {{ usuario.nombre }}!
             </span>
@@ -19,22 +21,23 @@
             </button>
           </div>
         } @else {
-          <ul class="navbar-nav d-flex flex-column align-items-start gap-2">
+          <ul class="navbar-nav d-flex flex-row align-items-center gap-2">
             <li class="nav-item">
-              <a class="btn text-white btn-sm w-100" routerLink="/iniciar-sesion" style="background: var(--color-pino);">Iniciar Sesión</a>
+              <a class="btn text-white btn-sm" routerLink="/iniciar-sesion" style="background: var(--color-pino);">Iniciar Sesión</a>
             </li>
             <li class="nav-item">
-              <a class="btn text-white btn-sm w-100" routerLink="/registro-usuario" style="background: var(--marron);">Registrarse</a>
+              <a class="btn text-white btn-sm" routerLink="/registro-usuario" style="background: var(--marron);">Registrarse</a>
             </li>
           </ul>
         }
       </div>
+    </div>
 
-    <a class="navbar-brand mx-auto" routerLink="/libros" style="color: #4A3F35; font-weight: bold; font-family: 'Merriweather', serif;">
+    <a class="navbar-brand" routerLink="/libros" style="color: #4A3F35; font-weight: bold; font-family: 'Merriweather', serif;">
       LibreriaTW2
     </a>
 
-    <div class="d-flex justify-content-end">
+    <div class="flex-grow-1 d-flex justify-content-end">
       @if (usuario$ | async; as usuario) {
         
         <ul class="navbar-nav">
