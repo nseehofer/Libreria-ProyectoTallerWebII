@@ -9,7 +9,7 @@ export class LoadingService {
   private activeRequests = 0;
 
   constructor(private loader: NgxUiLoaderService) {
-    console.log('LoadingService initialized');
+
   }
 
 

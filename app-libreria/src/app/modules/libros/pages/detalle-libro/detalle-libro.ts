@@ -44,7 +44,7 @@ export class DetalleLibro implements OnInit {
 
   agregarAlCarrito(libro: Libro): void {
     this.carritoService.agregarAlCarrito(libro);
-    console.log(this.carritoService.cantidadLibros());
+
 
     this.toastr.success(
   '<strong>Libro agregado al carrito</strong>',

@@ -15,7 +15,7 @@ export class LibroService {
     async crearLibro(data: {[key:string]:any}){
         const {nombre,descripcion,precio,autor,img_src, id_categoria} = data;
 
-        console.log(nombre,id_categoria);
+      
         if(!nombre || typeof nombre !== 'string'){
             throw new Error('El nombre es obligatorio y debe ser un string')
         }
