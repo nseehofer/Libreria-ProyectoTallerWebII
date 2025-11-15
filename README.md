@@ -19,7 +19,10 @@
     **Ejemplo de plantilla para `.env` (usando SQL Server):**
     ```ini
     # Reemplaza los valores con tus credenciales
-    DATABASE_URL="sqlserver://USUARIO:CONTRASEÑA@HOST:PUERTO;database=NOMBRE_DE_LA_DB;trustServerCertificate=true"
+    DATABASE_URL="sqlserver://localhost:1433;database=db-libreria;schema=dbo;integratedSecurity=true;trustServerCertificate=true"
+    JWT_SECRET="este-es-un-token-sarpado-en-cifrado-nadie-conoce-asi-que-mantenelo-oculto-de-cualquier-persona-1548976321569!"
+    NODE_ENV=development"
+    
     ```
 
 3.  **Genera el Cliente de Prisma**
@@ -36,3 +39,4 @@ Una vez completada la instalación, puedes iniciar el servidor:
 ```bash
 # Inicia el servidor en modo de desarrollo (si tienes nodemon o similar)
 npm run dev
+
